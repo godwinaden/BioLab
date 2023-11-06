@@ -1,3 +1,18 @@
+app/database/restricted/
+app/decrypted/
+tmp/
+nbs/tmp/
+models/
+*.pkl
+datasets/exports/*.json
+.DS_Store
+datasets/spam-classifier/
+datasets/zips/
+bin/
+etc/
+include/
+share/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
