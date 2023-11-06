@@ -1,7 +1,7 @@
 from fastapi import HTTPException
 
 
-class FlightException(HTTPException):
+class BioException(HTTPException):
     def __init__(self, status_code: int, msg: str, err: Exception = None):
         self.status_code = status_code
         self.msg = msg
@@ -22,17 +22,17 @@ class CredentialsNotFoundException(HTTPException):
         self.error = err
 
 
-class InvalidCityCodeException(HTTPException):
+class InvalidFaceException(HTTPException):
     def __init__(self, err: Exception = None):
         self.status_code = 400
-        self.msg = "Invalid City Code"
+        self.msg = "Invalid Face"
         self.error = err
 
 
-class InvalidCityNameException(HTTPException):
+class InvalidFingerException(HTTPException):
     def __init__(self, err: Exception = None):
         self.status_code = 400
-        self.msg = "Invalid City Name"
+        self.msg = "Invalid Person"
         self.error = err
 
 

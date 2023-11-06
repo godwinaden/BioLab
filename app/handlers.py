@@ -3,7 +3,8 @@ from fastapi.responses import JSONResponse
 from app.utils import log
 from app import exceptions
 
-def flight_exception_handler(request: Request, exc: exceptions.FlightException | HTTPException):
+
+def flight_exception_handler(request: Request, exc: exceptions.BioException | HTTPException):
 	base_error_message = f"Execution Failed: {request.method}: {request.url}"
 	msg = f"{base_error_message}. Detail: {exc.msg}"
 	log(msg=msg, level=40, exc=exc.error)
@@ -18,11 +19,11 @@ def no_credential_exception_handler(request: Request, exc: exceptions.Credential
 	flight_exception_handler(request, exc)
 
 
-def invalid_city_name_handler(request: Request, exc: exceptions.InvalidCityNameException):
+def invalid_city_name_handler(request: Request, exc: exceptions.InvalidFaceException):
 	flight_exception_handler(request, exc)
 
 
-def invalid_city_code_handler(request: Request, exc: exceptions.InvalidCityCodeException):
+def invalid_city_code_handler(request: Request, exc: exceptions.InvalidFingerException):
 	flight_exception_handler(request, exc)
 
 
